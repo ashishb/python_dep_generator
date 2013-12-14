@@ -1,7 +1,7 @@
 python_dep_generator
 ====================
 
-Generates python dependency graph
+Generates python code dependency graph
 
 usage: generate_dep.py [-h] [-s] path
 
