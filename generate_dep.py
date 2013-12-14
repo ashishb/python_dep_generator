@@ -55,12 +55,24 @@ class DepGenerator(object):
 			logger.error('Error happened while importing %s', path)
 
 	@staticmethod
+	def _ComparisonFunction(x, y):
+		if x.startswith('/'):
+			if y.startswith('/'):
+				return cmp(x, y)
+			else:
+				return +1
+		elif y.startswith('/'):
+			return -1
+		else:
+			return cmp(x, y)
+
+	@staticmethod
 	def prettyPrint(dep_dict, hide_system_packages=False):
 		for (k, deps) in dep_dict.items():
 			if len(deps):
 				print 
 				print k
-				for dep in sorted(deps):
+				for dep in sorted(deps, cmp=DepGenerator._ComparisonFunction):
 					if not hide_system_packages or dep.startswith('/'):
 						print '|_', dep
 
