@@ -18,8 +18,10 @@ optional arguments:
 
 
 Sample outputs
-====================
+--------------
+```
 $./generate_dep.py generate_dep.py
+
 generate_dep.py
 |_ argparse
 |_ importlib
@@ -29,4 +31,25 @@ generate_dep.py
 |_ sys
 |_ traceback
 |_ types
+```
 
+```
+$ ./generate_dep.py samples
+
+samples/module1.py
+|_ os
+|_ sys
+
+samples/module2.py
+|_ sys
+|_ time
+|_ /home/ashishb/src/python_dep_generator/samples/module1.py
+
+[16:12:49][master:!?][~/src/python_dep_generator] $ ./generate_dep.py -s samples
+
+samples/module1.py
+
+samples/module2.py
+|_ /home/ashishb/src/python_dep_generator/samples/module1.py
+
+```
