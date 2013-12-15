@@ -55,3 +55,7 @@ samples/module2.py
 |_ /home/ashishb/src/python_dep_generator/samples/module1.py
 
 ```
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/ashishb/python_dep_generator/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
