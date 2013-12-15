@@ -16,3 +16,17 @@ optional arguments:
   
   -s, --small_list  Pass -s to hide system packages and get a smaller list.
 
+
+Sample outputs
+====================
+$./generate_dep.py generate_dep.py
+generate_dep.py
+|_ argparse
+|_ importlib
+|_ inspect
+|_ logging
+|_ os
+|_ sys
+|_ traceback
+|_ types
+
