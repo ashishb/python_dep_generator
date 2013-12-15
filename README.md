@@ -44,8 +44,10 @@ samples/module2.py
 |_ sys
 |_ time
 |_ /home/ashishb/src/python_dep_generator/samples/module1.py
+```
 
-[16:12:49][master:!?][~/src/python_dep_generator] $ ./generate_dep.py -s samples
+```
+$ ./generate_dep.py -s samples
 
 samples/module1.py
 
