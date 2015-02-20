@@ -3,24 +3,26 @@ python_dep_generator
 
 Generates python code dependency graph
 
-usage: generate_dep.py [-h] [-s] path
+**Install**: sudo pip install python_dep_generator
 
-positional arguments:
+**Usage**: generate-dep [-h] [-s] path
 
-  path              path (or dir) of the python file (or all python files
+**Arguments**:
+
+  *path*              path (or dir) of the python file (or all python files
                     under it).
 
-optional arguments:
+**optional arguments**:
   
-  -h, --help        show this help message and exit
+  -h, --help        :  show this help message and exit
   
-  -s, --small_list  Pass -s to hide system packages and get a smaller list.
+  -s, --small_list : Pass -s to hide system packages and get a smaller list.
 
 
 Sample outputs
 --------------
 ```
-$./generate_dep.py generate_dep.py
+$ generate-dep generate_dep.py
 
 generate_dep.py
 |_ argparse
@@ -34,7 +36,7 @@ generate_dep.py
 ```
 
 ```
-$ ./generate_dep.py samples
+$ generate-dep samples
 
 samples/module1.py
 |_ os
@@ -47,7 +49,7 @@ samples/module2.py
 ```
 
 ```
-$ ./generate_dep.py -s samples
+$ generate-dep -s samples
 
 samples/module1.py
 
