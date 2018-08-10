@@ -3,16 +3,16 @@ python_dep_generator
 
 Generates python code dependency graph
 
-**Install**: sudo pip install python_dep_generator
+**Install**: `sudo pip install python_dep_generator`
 
-**Usage**: generate-dep [-h] [-s] path
+**Usage**: `generate-dep [-h] [-s] path`
 
 **Arguments**:
 
   *path*              path (or dir) of the python file (or all python files
                     under it).
 
-**optional arguments**:
+**Optional arguments**:
   
   -h, --help        :  show this help message and exit
   
