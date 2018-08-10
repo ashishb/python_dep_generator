@@ -2,6 +2,7 @@
 import argparse
 import importlib
 import inspect
+import functools
 import logging
 import os
 import sys
@@ -58,23 +59,23 @@ class DepGenerator(object):
 	def _ComparisonFunction(x, y):
 		if x.startswith('/'):
 			if y.startswith('/'):
-				return cmp(x, y)
+				return (x > y) - (x < y)
 			else:
 				return +1
 		elif y.startswith('/'):
 			return -1
 		else:
-			return cmp(x, y)
+			return (x > y) - (x < y)
 
 	@staticmethod
 	def prettyPrint(dep_dict, hide_system_packages=False):
 		for (k, deps) in dep_dict.items():
 			if len(deps):
-				print 
-				print k
-				for dep in sorted(deps, cmp=DepGenerator._ComparisonFunction):
+				print
+				print(k)
+				for dep in sorted(deps, key=functools.cmp_to_key(DepGenerator._ComparisonFunction)):
 					if not hide_system_packages or dep.startswith('/'):
-						print '|_', dep
+						print('%s%s' %('|_', dep))
 
 
 def main():
